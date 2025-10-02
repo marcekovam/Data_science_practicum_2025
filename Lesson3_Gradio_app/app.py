@@ -16,8 +16,8 @@ def classify_image(img):
 # Define Gradio input and output components 
 image = gr.Image(width=224, height=224)  # Image input
 label = gr.Label()  # Output label to display classification
-#examples = ['pizza.jpg', 'burger.jpg', 'pasta.jpg', 'sushi.jpg']  # Example images for demonstration
+examples = ['burger.jpg', 'sushi.jpg']  # Example images for demonstration
 
 # Create and launch the Gradio interface
-intf = gr.Interface(fn=classify_image, inputs=image, outputs=label) # examples=examples
-intf.launch()
+intf = gr.Interface(fn=classify_image, inputs=image, outputs=label, examples=examples)
+intf.launch(share=True)
